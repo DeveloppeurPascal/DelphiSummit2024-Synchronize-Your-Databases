@@ -1,0 +1,3 @@
+[submodule "lib-externes/TableDataSync4Delphi"]
+	path = lib-externes/TableDataSync4Delphi
+	url = https://github.com/DeveloppeurPascal/TableDataSync4Delphi.git
