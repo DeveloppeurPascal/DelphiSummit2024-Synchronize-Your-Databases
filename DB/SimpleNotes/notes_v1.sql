@@ -1,0 +1,16 @@
+CREATE TABLE item (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  content TEXT NULL DEFAULT "",
+  folder_id INTEGER NULL DEFAULT 0
+);
+
+CREATE TABLE folder (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  name VARCHAR(255) NULL DEFAULT ""
+);
+
+CREATE UNIQUE INDEX item_folder ON item
+  (folder_id,id);
+
+CREATE UNIQUE INDEX folder_name ON folder
+  (name,id);
