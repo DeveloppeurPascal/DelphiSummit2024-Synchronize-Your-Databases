@@ -1,0 +1,268 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Simple notes sample'
+  ClientHeight = 480
+  ClientWidth = 900
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lFolders: TLayout
+    Align = MostLeft
+    Position.Y = 40.000000000000000000
+    Size.Width = 300.000000000000000000
+    Size.Height = 440.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object tvFolders: TTreeView
+      Align = Client
+      Size.Width = 300.000000000000000000
+      Size.Height = 390.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = tvFoldersChange
+      Viewport.Width = 296.000000000000000000
+      Viewport.Height = 386.000000000000000000
+    end
+    object gplFolders: TGridPanelLayout
+      Align = Bottom
+      Position.Y = 390.000000000000000000
+      Size.Width = 300.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      ColumnCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = btnAddSibling
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = btnAddChild
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      object btnAddSibling: TButton
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'btnAddSibling'
+        TextSettings.Trimming = None
+        OnClick = btnAddSiblingClick
+      end
+      object btnAddChild: TButton
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'btnAddChild'
+        TextSettings.Trimming = None
+        OnClick = btnAddChildClick
+      end
+    end
+  end
+  object lNotes: TLayout
+    Align = Left
+    Position.X = 300.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 300.000000000000000000
+    Size.Height = 440.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object lbNotes: TListBox
+      Align = Client
+      Size.Width = 300.000000000000000000
+      Size.Height = 390.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnChange = lbNotesChange
+      Viewport.Width = 296.000000000000000000
+      Viewport.Height = 386.000000000000000000
+    end
+    object gplNotes: TGridPanelLayout
+      Align = Bottom
+      Position.Y = 390.000000000000000000
+      Size.Width = 300.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      ColumnCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = btnAdd
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = btnDelete
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      object btnAdd: TButton
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'btnAdd'
+        TextSettings.Trimming = None
+        OnClick = btnAddClick
+      end
+      object btnDelete: TButton
+        Align = Client
+        Enabled = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'btnDelete'
+        TextSettings.Trimming = None
+      end
+    end
+  end
+  object lNoteDetail: TLayout
+    Align = Client
+    Size.Width = 300.000000000000000000
+    Size.Height = 440.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object mmoDetail: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Size.Width = 300.000000000000000000
+      Size.Height = 390.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 296.000000000000000000
+      Viewport.Height = 386.000000000000000000
+    end
+    object gplDetail: TGridPanelLayout
+      Align = Bottom
+      Position.Y = 390.000000000000000000
+      Size.Width = 300.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      ColumnCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = btnSave
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = btnCancel
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
+      object btnSave: TButton
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'btnSave'
+        TextSettings.Trimming = None
+        OnClick = btnSaveClick
+      end
+      object btnCancel: TButton
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'btnCancel'
+        TextSettings.Trimming = None
+        OnClick = btnCancelClick
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Align = MostTop
+    Size.Width = 900.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object btnSync: TButton
+      Align = Right
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 815.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'btnSync'
+      TextSettings.Trimming = None
+      OnClick = btnSyncClick
+    end
+  end
+end
