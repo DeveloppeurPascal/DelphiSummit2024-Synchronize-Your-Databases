@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BD8DE785-736A-4DFB-B5C3-75B1B32A7E9E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DBServer\DS2024DBSyncServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Contacts\DS2024Contacts.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SimpleNotes\DS2024SimpleNotes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DS2024DBSyncServer">
+        <MSBuild Projects="DBServer\DS2024DBSyncServer.dproj"/>
+    </Target>
+    <Target Name="DS2024DBSyncServer:Clean">
+        <MSBuild Projects="DBServer\DS2024DBSyncServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DS2024DBSyncServer:Make">
+        <MSBuild Projects="DBServer\DS2024DBSyncServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DS2024Contacts">
+        <MSBuild Projects="Contacts\DS2024Contacts.dproj"/>
+    </Target>
+    <Target Name="DS2024Contacts:Clean">
+        <MSBuild Projects="Contacts\DS2024Contacts.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DS2024Contacts:Make">
+        <MSBuild Projects="Contacts\DS2024Contacts.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DS2024SimpleNotes">
+        <MSBuild Projects="SimpleNotes\DS2024SimpleNotes.dproj"/>
+    </Target>
+    <Target Name="DS2024SimpleNotes:Clean">
+        <MSBuild Projects="SimpleNotes\DS2024SimpleNotes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DS2024SimpleNotes:Make">
+        <MSBuild Projects="SimpleNotes\DS2024SimpleNotes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DS2024DBSyncServer;DS2024Contacts;DS2024SimpleNotes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DS2024DBSyncServer:Clean;DS2024Contacts:Clean;DS2024SimpleNotes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DS2024DBSyncServer:Make;DS2024Contacts:Make;DS2024SimpleNotes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
